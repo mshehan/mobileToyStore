@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html manifest="local.appcache">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ABC Toys</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script src="js/map.3.js"></script>
+</head>
+
+<body>
+    <style>
+        .ui-icon-myicon:after {
+            background-image: url("images/thumb.png");
+            /* Make your icon fit */
+            background-size: 18px 18px;
+        }
+        #googleMap {
+            height:400px;
+            width:95%;
+            display:none;
+        }
+ 
+    </style>
+    <!--HOME PAGE-->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>ABC Toys</h1>
+            <h3>Making learning fun</h3>
+        </div>
+        <div role="main" class="ui-content">
+            <p>ABC Toys is a company that opened its doors in 2001 and it has kept its mission for all those years.</p>
+            <p>The mission of our company is to create toys that are safe for kindergarten kids but that challenge the kids'
+                mind and motor skills making learning a fun task.</p>
+            <p>By the way, parents love our toys too</p>
+        </div>
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a data-icon="home" href="#home">Home</a></li>
+                    <li><a data-icon="phone" href="#contact">Contact US</a></li>
+                    <li><a data-icon="shop" href="#products">Products</a></li>
+                    <li><a data-icon="location" href="#location">location</a></li>
+                </ul>
+            </div>
+            <!--navbar-->
+        </div>
+        <!--footer-->
+    </div>
+    <!--page-->
+    <!--END OF HOME PAGE-->
+
+    <!--contact us page start-->
+    <div data-role="page" id="contact">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Contact Us</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+                <li data-icon="mail"><a href="#"><h4>Email</h4><p>abctoys@abc.com</p></a></li>
+                <li data-icon="phone"><a href="#"><h4>Telephone</h4><p>(555)abc-1234</p></a></li>
+                <li data-icon="navigation"><a href="#"><h4>Address</h4><p>123 ABC Plaza<br>San Francisco,<br>CA 94102</p></a></li>
+                <!-- Right HERE -->
+                <li data-icon="custom"><a href="#" class="ui-icon-myicon"><h4>Facebook</h4></a></li>
+                <!-- add a facebook icon and add a link to the facebook home page -->
+            </ul>
+            <form>
+            
+                <fieldset data-role="collapsible" data-inset="false" data-collapsed-icon="comment">
+                
+                    <legend>Tell Us How We're Doing</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="e.g.John Doe" value="">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="abc123@mail.com" value="">
+                    <label for="comment">Comments:</label>
+                    <textarea cols="40" rows="10" name="comments" id="comments"></textarea>
+                    <input type="button" value="submit">
+                </fieldset>
+            </form>
+
+        </div>
+
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a data-icon="home" href="#home">Home</a></li>
+                    <li><a data-icon="phone" href="#contact">Contact US</a></li>
+                    <li><a data-icon="shop" href="#products">Products</a></li>
+                    <li><a data-icon="location" href="#location">location</a></li>
+                </ul>
+            </div>
+            <!--navbar-->
+        </div>
+        <!--footer-->
+    </div>
+    <!--END OF CONTACT US PAGE-->
+    <!--START OF PRODUCTS PAGE-->
+    <div data-role="page" id="products">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Shop Our Products</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p>Here at ABC toys we work hard to provide our customers with the latest in toy technology for toddlers. We aim
+                to serve our customers the best qualitity. Rest assured that we have no lack of educational, fun, safe and
+                exciting treasures for your little treasure. Here you can explore just a few of our unforgettable finds.
+                We hope you have as much fun shopping as your kids will having playing!
+            </p>
+            <div data-role="collapsible" data-inset="false">
+                <h3>Shop Our Products</h3>
+                <div data-role="collapsibleset" data-inset="false" data-collapsed-icon="info">
+                    <h3>Biggest Hits!</h3>
+                    <div data-role="collapsible" id="toy1">
+                        <h4>Chemical Set</h4>
+                        <div class="collapsed-content">
+                            <img src="images/chemical_engineer.jpg" alt="chemical engineer toy"/>
+                            <p>Is your child interested in atomic energy? get them started with their first mini atomic bomb
+                                kit. They'll blow the other kids right out of the water with this one.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" id="toy2">
+                        <h4>Music Magic</h4>
+                        <div class="collapsed-content">
+                            <img src="images/annoying.jpg" alt="shaking bells toy" />
+                            <p>Is your child annoying you enough? don't worry if they're not we have the perfect thing to really
+                                get you steaming. Give them this little magical music toy and they'll learn to be a little
+                                motzart.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" id="toy3">
+                        <h4>Circuit Board</h4>
+                        <div class="collapsed-content">
+                            <img src="images/circuit_board.jpg" alt="ciruit board toy"/>
+                            <p>Are you pressuring your child enough? Are you making sure they excel at nothing else besides
+                                science? Well, if you don't have this toy yet then you're obviously not doing a good job.
+                                Learn some parenting and buy your child this great circuit kit and get them excited about
+                                a career in Electrical Engineering.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" id="toy4">
+                        <div class="collapsed-content">
+                            <h4>Social Justice Handbook</h4>
+                            <img src="images/justice_warrior.jpg" alt="social justice handbook"/>
+                            <p>Have you started telling your kids about equality and social justice? it's never too early to
+                                start teaching them to care about the world they live in. Get them a social justice handbook
+                                and make a little social activist of them yet.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" id="toy5">
+                        <h4>Expense Accounts for Kids</h4>
+                        <div class="collapsed-content">
+                            <img src="images/business_card.jpg" alt="register toy"/>
+                            <p>have you taught your child to be responsible with credit? not yet? well, teach them how to swipe
+                                your credit cards left and right and to be unappreciative of all your hard work and love.
+                                Endoctrinate them early into a consumer lifestyle. Teach them to buy buy buy before they
+                                think especially when it's on someone else's dime!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--end of collapsible set-->
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a data-icon="home" href="#home">Home</a></li>
+                    <li><a data-icon="phone" href="#contact">Contact US</a></li>
+                    <li><a data-icon="shop" href="#products">Products</a></li>
+                    <li><a data-icon="location" href="#location">location</a></li>
+                </ul>
+            </div>
+            <!--navbar-->
+        </div>
+        <!--footer-->
+    </div>
+    <!--END OF PRODUCTS PAGE-->
+
+
+    <div data-role="page" id="location">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h3>Location</h3>
+        </div>
+        <div role="main" class="ui-content">
+            <p>looking for one of our locations?</p>
+            <button id="map_it" class="ui-btn ui-btn-inline">map it!</button>
+            <div id="googleMap"></div>  
+        </div>
+        <!--end of main content-->
+        <div data-role="footer" data-theme="b" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a data-icon="home" href="#home">Home</a></li>
+                    <li><a data-icon="phone" href="#contact">Contact US</a></li>
+                    <li><a data-icon="shop" href="#products">Products</a></li>
+                    <li><a data-icon="location" href="#location">location</a></li>
+                </ul>
+            </div>
+            <!--navbar-->
+        </div>
+        <!--footer-->
+    </div>
+    <!--End of Location Page-->
+</body>
+
+</html>
